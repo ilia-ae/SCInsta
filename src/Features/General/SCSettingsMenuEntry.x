@@ -2,6 +2,14 @@
 #import "../../Settings/SCISettingsViewController.h"
 #import <objc/runtime.h>
 
+// %hook on a mangled Swift name only forward-declares the class, so the hook
+// body cannot reach UIView's API. Declare it explicitly, mirroring the old
+// IGBadgedNavigationButton entry in InstagramHeaders.h.
+@interface _TtC19IGProfileNavigation24IGBadgedNavigationButton : UIView
+- (void)addLongPressGestureRecognizer; // new
+- (void)handleLongPress:(UILongPressGestureRecognizer *)sender; // new
+@end
+
 // Instagram 433+ ("Liquid Glass") moved the profile navigation into a Swift
 // module, so the plain `%hook IGBadgedNavigationButton` resolved to a nil class
 // and every hook below it silently no-op'd (upstream issue #281).
