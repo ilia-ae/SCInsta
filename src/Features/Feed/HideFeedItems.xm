@@ -257,7 +257,7 @@ static NSArray *removeItemsInList(NSArray *list, BOOL isFeed) {
 }
 %end
 // "Sponsored" posts on discover/search page
-%hook _TtC28IGExploreViewControllerSwift26IGExploreListKitDataSource
+%hook IGExploreListKitDataSource
 - (NSArray *)objectsForListAdapter:(id)arg1 {
     if ([SCIUtils getBoolPref:@"hide_ads"]) {
         return removeItemsInList(%orig, NO);
