@@ -1,3 +1,4 @@
+#import <Foundation/Foundation.h>
 #import <Security/Security.h>
 
 // Instagram asks the keychain for access groups that belong to Meta —
