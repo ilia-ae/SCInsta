@@ -13,7 +13,7 @@
     return %orig;
 }
 %end
-%hook IGSuggestionsUnitViewModel
+%hook _TtC17IGSuggestionsUnit26IGSuggestionsUnitViewModel
 - (id)initWithAYMFModel:(id)arg1 headerViewModel:(id)arg2 {
     if ([SCIUtils getBoolPref:@"no_suggested_users"]) {
         NSLog(@"[SCInsta] Hiding suggested users: main feed welcome section");
@@ -26,7 +26,7 @@
 %end
 
 // Suggested users in profile header
-%hook IGProfileHeaderView
+%hook _TtC15IGProfileHeader19IGProfileHeaderView
 - (id)objectsForListAdapter:(id)arg1 {
     NSArray *originalObjs = %orig();
     NSMutableArray *filteredObjs = [NSMutableArray arrayWithCapacity:[originalObjs count]];

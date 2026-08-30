@@ -607,3 +607,12 @@ typedef FLEXAlertAction * _Nonnull (^FLEXAlertActionHandler)(void(^handler)(NSAr
 - (void)hideExplorer;
 - (void)toggleExplorer;
 @end
+
+// Instagram moved these classes into Swift modules: the ObjC runtime now knows
+// them by their mangled names, so that is what %hook must resolve. Alias the mangled
+// name onto the existing declaration above so hook bodies keep seeing the members.
+@compatibility_alias _TtC11IGFollowing18IGFollowController IGFollowController;
+@compatibility_alias _TtC16IGDirectComposer16IGDirectComposer IGDirectComposer;
+@compatibility_alias _TtC20IGStoryDefaultFooter34IGStoryFullscreenDefaultFooterView IGStoryFullscreenDefaultFooterView;
+@compatibility_alias _TtC21IGModernFeedVideoCell21IGModernFeedVideoCell IGModernFeedVideoCell;
+@compatibility_alias _TtC26IGSundialViewerVerticalUFI26IGSundialViewerVerticalUFI IGSundialViewerVerticalUFI;

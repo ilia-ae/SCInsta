@@ -37,7 +37,7 @@
     CONFIRMPOSTLIKE(%orig);
 }
 %end
-%hook IGVideoPlayerOverlayContainerView
+%hook _TtC25IGModernFeedVideoOverlays33IGVideoPlayerOverlayContainerView
 - (void)_handleDoubleTapGesture:(id)arg1 {
     CONFIRMPOSTLIKE(%orig);
 }
@@ -97,7 +97,7 @@
 %end
 
 // Liking stories
-%hook IGStoryFullscreenDefaultFooterView
+%hook _TtC20IGStoryDefaultFooter34IGStoryFullscreenDefaultFooterView
 - (void)_handleLikeTapped {
     CONFIRMPOSTLIKE(%orig);
 }

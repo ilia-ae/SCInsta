@@ -2,7 +2,7 @@
 
 static char targetStaticRef[] = "target";
 
-%hook IGDirectNotesCreationView
+%hook _TtC25IGDirectNotesCreationView25IGDirectNotesCreationView
 - (id)initWithViewModel:(id)model
          featureSupport:(IGNotesCreationFeatureSupportModel *)support
   presentationAnimation:(id)animation

@@ -132,7 +132,7 @@ static NSArray *removeItemsInList(NSArray *list, BOOL isFeed) {
     return filteredObjs;
 }
 %end
-%hook IGSundialFeedDataSource
+%hook _TtC23IGSundialFeedDataSource23IGSundialFeedDataSource
 - (NSArray *)objectsForListAdapter:(id)arg1 {
     NSArray *filteredList = removeItemsInList(%orig, NO);
 
@@ -144,7 +144,7 @@ static NSArray *removeItemsInList(NSArray *list, BOOL isFeed) {
     return filteredList;
 }
 %end
-%hook IGContextualFeedViewController
+%hook _TtC30IGContextualFeedViewController30IGContextualFeedViewController
 - (NSArray *)objectsForListAdapter:(id)arg1 {
     if ([SCIUtils getBoolPref:@"hide_ads"]) {
         return removeItemsInList(%orig, NO);
@@ -162,7 +162,7 @@ static NSArray *removeItemsInList(NSArray *list, BOOL isFeed) {
     return %orig;
 }
 %end
-%hook IGChainingFeedViewController
+%hook _TtC18IGPostChainingFeed28IGChainingFeedViewController
 - (NSArray *)objectsForListAdapter:(id)arg1 {
     if ([SCIUtils getBoolPref:@"hide_ads"]) {
         return removeItemsInList(%orig, NO);
@@ -182,7 +182,7 @@ static NSArray *removeItemsInList(NSArray *list, BOOL isFeed) {
     return %orig;
 }
 %end
-%hook IGStoryAdsManager
+%hook _TtC17IGStoryAdsManager17IGStoryAdsManager
 - (id)initWithUserSession:(id)arg1 storyViewerLoggingContext:(id)arg2 storyFullscreenSectionLoggingContext:(id)arg3 viewController:(id)arg4 {
     if ([SCIUtils getBoolPref:@"hide_ads"]) {
         NSLog(@"[SCInsta] Removing ads");
@@ -225,7 +225,7 @@ static NSArray *removeItemsInList(NSArray *list, BOOL isFeed) {
     return %orig;
 }
 %end
-%hook IGStoryAdsOptInTextView
+%hook _TtC12IGStoryAdsUI23IGStoryAdsOptInTextView
 - (id)initWithBrandedContentStyledString:(id)arg1 sponsoredPostLabel:(id)arg2 {
     if ([SCIUtils getBoolPref:@"hide_ads"]) {
         NSLog(@"[SCInsta] Removing ads");
@@ -257,7 +257,7 @@ static NSArray *removeItemsInList(NSArray *list, BOOL isFeed) {
 }
 %end
 // "Sponsored" posts on discover/search page
-%hook IGExploreListKitDataSource
+%hook _TtC28IGExploreViewControllerSwift26IGExploreListKitDataSource
 - (NSArray *)objectsForListAdapter:(id)arg1 {
     if ([SCIUtils getBoolPref:@"hide_ads"]) {
         return removeItemsInList(%orig, NO);

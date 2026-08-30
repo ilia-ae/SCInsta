@@ -1,6 +1,6 @@
 #import "../../Utils.h"
 
-%hook IGDirectNotesTrayRowCell
+%hook _TtC24IGDirectNotesTrayUISwift24IGDirectNotesTrayRowCell
 - (id)listAdapterObjects {
     NSArray *originalObjs = %orig();
     NSMutableArray *filteredObjs = [NSMutableArray arrayWithCapacity:[originalObjs count]];

@@ -14,7 +14,7 @@
 %end
 
 // Workaround until I can figure out how to stop long press recording from automatically sending
-%hook IGDirectComposer
+%hook _TtC16IGDirectComposer16IGDirectComposer
 - (void)_didLongPressVoiceMessage:(id)arg1 {
     if ([SCIUtils getBoolPref:@"voice_message_confirm"]) {
         return;

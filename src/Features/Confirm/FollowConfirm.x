@@ -16,7 +16,7 @@
 ////////////////////////////////////////////////////////
 
 // Follow button on profile page
-%hook IGFollowController
+%hook _TtC11IGFollowing18IGFollowController
 - (void)_didPressFollowButton {
     // Get user follow status (check if already following user)
     NSInteger UserFollowStatus = self.user.followStatus;

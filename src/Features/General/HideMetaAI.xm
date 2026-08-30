@@ -80,7 +80,7 @@
 %end
 
 // Suggested AI chats in direct inbox header
-%hook IGDirectInboxNavigationHeaderView
+%hook _TtC33IGDirectInboxNavigationHeaderView33IGDirectInboxNavigationHeaderView
 - (id)initWithFrame:(CGRect)arg1
               title:(id)arg2
           titleView:(id)arg3
@@ -133,7 +133,7 @@
 %end
 
 // Write with meta ai in message composer
-%hook IGDirectComposer
+%hook _TtC16IGDirectComposer16IGDirectComposer
 - (id)initWithLayoutSpecProvider:(id)arg1
         userLauncherSetProviding:(id)arg2
                           config:(IGDirectComposerConfig *)config
@@ -289,7 +289,7 @@
 %end
 
 // "Click to summarize" pill under DM navigation bar
-%hook IGDirectThreadViewMetaAISummaryFeatureController
+%hook _TtC48IGDirectThreadViewMetaAISummaryFeatureController48IGDirectThreadViewMetaAISummaryFeatureController
 - (id)initWithUserSession:(id)arg1 mutableStateProvider:(id)arg2 threadViewControllerFeatureDelegate:(id)arg3 presentingViewController:(id)arg4 {
     return nil;
 }
@@ -394,7 +394,7 @@
 %end
 
 // AI generated fonts in text entry
-%hook IGCreationTextToolView
+%hook _TtC30IGStoryPostCaptureTextControls22IGCreationTextToolView
 - (id)initWithMenuConfiguration:(unsigned long long)configuration userSession:(id)session creationEntryPoint:(long long)point isAIFontsEnabled:(_Bool)enabled genAINuxManager:(id)manager showFontBadge:(_Bool)badge {
     return %orig(configuration, session, point, [SCIUtils getBoolPref:@"hide_meta_ai"] ? false : enabled, manager, badge);
 }

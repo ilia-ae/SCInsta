@@ -136,11 +136,11 @@ shouldPersistLastBugReportId:(id)arg6
 %end
 
 // Disable screenshot logging/detection
-%hook IGDirectVisualMessageViewerSession
+%hook _TtC34IGDirectVisualMessageViewerSession34IGDirectVisualMessageViewerSession
 - (id)visualMessageViewerController:(id)arg1 didDetectScreenshotForVisualMessage:(id)arg2 atIndex:(NSInteger)arg3 { NONVOID_HANDLESCREENSHOT(%orig); }
 %end
 
-%hook IGDirectVisualMessageReplayService
+%hook _TtC31IGDirectVisualMessageServiceKit34IGDirectVisualMessageReplayService
 - (id)visualMessageViewerController:(id)arg1 didDetectScreenshotForVisualMessage:(id)arg2 atIndex:(NSInteger)arg3 { NONVOID_HANDLESCREENSHOT(%orig); }
 %end
 
@@ -168,7 +168,7 @@ shouldPersistLastBugReportId:(id)arg6
 - (void)screenshotObserverDidSeeActiveScreenCapture:(id)arg1 event:(NSInteger)arg2 { VOID_HANDLESCREENSHOT(%orig); }
 %end
 
-%hook IGDirectMediaViewerViewController
+%hook _TtC27IGDirectMediaViewerKitSwift33IGDirectMediaViewerViewController
 - (void)screenshotObserverDidSeeScreenshotTaken:(id)arg1 { VOID_HANDLESCREENSHOT(%orig); }
 - (void)screenshotObserverDidSeeActiveScreenCapture:(id)arg1 event:(NSInteger)arg2 { VOID_HANDLESCREENSHOT(%orig); }
 %end
@@ -346,7 +346,7 @@ shouldPersistLastBugReportId:(id)arg6
 %end
 
 // Direct suggested chats (inbox view)
-%hook IGDirectInboxListAdapterDataSource
+%hook _TtC34IGDirectInboxListAdapterDataSource34IGDirectInboxListAdapterDataSource
 - (id)objectsForListAdapter:(id)arg1 {
     NSArray *originalObjs = %orig();
     NSMutableArray *filteredObjs = [NSMutableArray arrayWithCapacity:[originalObjs count]];
@@ -416,7 +416,7 @@ shouldPersistLastBugReportId:(id)arg6
 %end
 
 // Explore page results
-%hook IGSearchListKitDataSource
+%hook _TtC15IGGenericSearch25IGSearchListKitDataSource
 - (id)objectsForListAdapter:(id)arg1 {
     NSArray *originalObjs = %orig();
     NSMutableArray *filteredObjs = [NSMutableArray arrayWithCapacity:[originalObjs count]];
@@ -506,7 +506,7 @@ shouldPersistLastBugReportId:(id)arg6
 %end
 
 // Story tray
-%hook IGMainStoryTrayDataSource
+%hook _TtC25IGMainStoryTrayDataSource25IGMainStoryTrayDataSource
 - (id)allItemsForTrayUsingCachedValue:(BOOL)cached {
     NSArray *originalObjs = %orig(cached);
     NSMutableArray *filteredObjs = [NSMutableArray arrayWithCapacity:[originalObjs count]];
@@ -634,7 +634,7 @@ shouldPersistLastBugReportId:(id)arg6
 }
 %end
 
-%hook IGSundialViewerVerticalUFI
+%hook _TtC26IGSundialViewerVerticalUFI26IGSundialViewerVerticalUFI
 - (void)_didTapLikeButton:(id)arg1 {
     if ([SCIUtils getBoolPref:@"like_confirm_reels"]) {
         NSLog(@"[SCInsta] Confirm reels like triggered");

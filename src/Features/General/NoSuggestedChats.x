@@ -2,7 +2,7 @@
 #import "../../InstagramHeaders.h"
 
 // Channels dms tab (header)
-%hook IGDirectInboxHeaderSectionController
+%hook _TtC32IGDirectInboxViewControllerSwift36IGDirectInboxHeaderSectionController
 - (id)viewModel {
     if ([[%orig title] isEqualToString:@"Suggested"]) {
 
